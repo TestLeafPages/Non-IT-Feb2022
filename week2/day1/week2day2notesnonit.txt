@@ -1,0 +1,292 @@
+Drawbacks of Manual Testing:
+=======================
+Time Cosuming 
+Human resources
+May miss some bugs
+
+
+Automation Testing:
+================
+
+Selenium WebDriver
+
+-To automate WebApplication
+-using Selenium
+
+API -Application programming Interface
+
+
+Where Can we write our  Selenium Script
+
+Eclipse IDE -To write the script
+Selenium Commands ---------------------------------------------->browser
+			    Driver
+Chrome Browser --ChromeDriver
+Edge-EdgeDriver
+FireFox--FirefoxDriver
+
+
+Things needed too write the script
+
+Build Tool -Maven
+Dependencies 
+Java
+
+DOM -Document Object model-->web Page design
+ctrl+shift+i
+
+HTML-Hyper Text Markup language
+
+<html>
+<head>
+<body>
+<p>
+<img>
+</p>
+<div>
+      <label> class="input" id="username"</label>
+       <input></input>
+       <button></button>
+      </div>
+</body>
+<head>
+</html>
+
+locators
+======
+id                   unique
+name             
+classname
+linktext
+partial linktext
+tagname
+xpath
+css
+
+
+
+Select -tag name for dropdown
+
+Options-shows the options of the drop
+
+  to select hte option of the dropdown-3 ways
+
+                 - Index -will be 0
+	-Value
+	-text
+Today's Agenda:
+============
+1.Basic -Xpath
+2.Advanced Xpath
+3.Implicit Wait
+
+
+Recap:
+======
+Selenium-Why Selenium?
+DOM-HTML Script..
+Selenium internal Architecture-->how the communication happens between Selenium and the browser
+Selenium-java-->APIcall-->browser
+
+
+locators
+======
+id
+name
+classname
+linktext
+partial linktext-- can be used to use text value with partial match
+tagname
+xpath
+css
+
+
+Dropdowns:
+=========
+Select Class 
+methods --index, visibleText, value
+
+getOptions()--to reurn the multiple options in the dropdown
+===========================
+
+XPath
+=====
+Xml Path
+
+When should not use Locator?
+
+
+id		numbers
+Class 		duplicated values/white spaces
+name         	duplicated values
+link		numbers
+
+To help this scenario:
+
+xpath
+========
+xml path--helps to locate the element when you have not a stable loctaors
+
+Absolute xpath--from root element to destined webelement
+=============
+start with /
+
+/html/body/div[2]/div[2]/div//p/input
+ 
+Relative xpath
+===========
+start with //
+//tagname
+
+Attribute based realtive xpath
+=====================
+//tagname[@attribute='attribute value']
+//input[@id='password']
+//label[@for='password']
+
+
+Text based relative xpath
+===================
+//tagname[text()='text value']
+//label[text()='Username']
+
+Partial relativeXpath:
+===============
+
+a) Partial attributebased
+ --------------------------------------
+
+
+String str= "Learning Java";
+
+str.contains("Java");
+
+
+//tagname[contains(@attribute,'partial attribute Value')]
+//input[contains(@name,'USER')]
+
+
+b)Partial text based
+-----------------------------
+//tagname[contains(text(),'partial text value')]
+//a[contains(text(),'CRM')]
+
+
+Collection based Realative xpath:
+==========================
+(relative xpath)[index]
+(//input[@class='inputLogin'])[2]
+
+==================================
+
+Advanced Xpath
+-----------------------
+Axes based xpath/Relationship based xpath
+==================================
+
+Grandparent-Grandchild
+-----------------------------------
+//tagname[@attribute='attribute value']//tagname of the child
+//form[@id='login']//input
+
+Parent-Child
+-------------------
+(Relative xpath of Parent)/tagname
+//p[@class='top']/input
+======================
+GrandChild-GrandParent
+
+(Relative xpath of the child)/ancestor:: tagname
+
+//input[@id='password']/ancestor::form
+
+(Relative xpath of the child)/descendant::tagname
+=======================================================
+
+Child-Parent
+-------------
+(Relative xpath of the child)/parent::tagname
+
+
+//input[@id='password']/parent::p
+
+//input[@id='password']/..
+
+(Relative xpath of the child)/parent::tagname[@attribute='attribute value']
+=============================================================
+Sibiling
+----------
+Elder sibling to younger sibling:
+
+(Relative xpath of elder)/following-sibling:: younger sibling tagname/xpath
+
+
+//label[@for='username']/following-sibling::input
+//label[@for='username']/following-sibling::input[@class='inputLogin']
+
+==================================================================
+Younger sibilng- Elder Sibling
+
+(Relative xpath of the younger Sibiling)/preceeding-sibling::tagname
+//input[@class='inputLogin']/preceding-sibling::label
+//input[@class='inputLogin']/preceding-sibling::label[@for='username']
+
+==================================================================
+Cousin
+----------
+
+Elder cousin to younger cousin
+==========================
+Relative xpath of the elder cousin/following::tagname
+//label[@for='username']/following::label
+
+(if we have more matches in the cousin relation we need to use index to locate appropriate webelement
+//label[@for='username']/following::input[3]
+-------------------------------------------------------------------------
+Younger cousin to Elder Cousin
+======================
+Realtive xpathof YoungerCousin/preceding::tagname
+//input[@class='decorativeSubmit']/preceding::label
+
+If you have more matches..Preceding will go to the topmost match and using index  to locate appropriate webelement
+
+======================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

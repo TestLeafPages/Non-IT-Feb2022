@@ -1,0 +1,147 @@
+Selenium Basic
+----------------
+Introduction
+
+Basic Loators
+
+Work with DropDown 
+
+Selennium Internal Architecture
+--------------------------------
+Selenium java Library....>RestAPI....>ChromeDriver....>Chrome Browser
+                                      (google)
+Selenium java Library.....>RestAPI...>GeckoDriver ....>Firefox Browser
+                                      (Mozilla)
+Selenium java Library.....>RestAPI...>EdgeDriver......>EdgeBrowser
+                                      (Microsoft)
+Selenium java Library.....>RestAPI...>SafariDriver.....>Safari Browser
+                                      (Apple)
+
+POM.XML
+Project Object Model
+
+
+<dependency>
+<groupId>org.seleniumhq.selenium</groupId>
+<artifactId>selenium-java</artifactId>
+<version>4.0.0</version>
+</dependency>
+
+<dependency>
+<groupId>io.github.bonigarcia</groupId>
+<artifactId>webdrivermanager</artifactId>
+<version>4.2.2</version>
+</dependency>
+
+
+choose project.....click maven.....UpdateProject....new window click the check box
+ForceUpdate...click ok
+
+ClassRoom 1:
+step 1:Launch the Browser
+step 2:URL Loading(leafTap)
+http://leaftaps.com/opentaps/control/login
+step3:To maximize the window
+ HTML
+------
+hyper text markup language
+<Tags>
+pink colour
+<Html> root tag </Html>
+<Head></Head>
+<body>
+<div> -----division </div>
+</body>
+<a> it has link in it
+<input>---input of the text box
+<label>----identify the element
+<button>...input of click
+<span> it has division of document
+<select>......Dropdown
+<option>......Dropdown list
+<table>
+<tbody>
+<th>-----header</th>
+<tr>------Row</tr>
+<td>------data</td>
+</tbody>
+</table>
+DOM
+1.Tag---pink
+2.Attribute  is in orange colour ex:id(orange)="username"(value)
+3.Attribute value is blue in colour
+4.Text-----black
+
+open the inspect page
+----------------------------
+1.Goto inspect-----Right click on the webpage...>choose inspect
+2.ctrl+shift+i
+3. fn + f12
+4.In Browser top three . click .... choose more tool....choose developer tool
+                 
+
+8 Locators priority
+-----------------
+1.id
+2.name
+3.classname
+4.link text <a> text...black
+5.tagname
+6.xpath
+7.css Selector
+8.partial linktext
+
+
+ClassRoom 2:
+----------
+step 4:find the username and pass the value(input)
+username:demosalesmanager
+
+step5: Find the password and pass the  value(input)
+password:crmsfa
+
+step6:find the login button and click
+
+
+ Two method used to interact with webelement
+1.senkeys().....pass the input
+2.click().....to click the button
+
+
+
+Work with DropDown
+<select>...parent tag
+child tag----<option>
+1.Select by visible text........Text with black
+2.Select by value ....value=blue in colour
+3.Select by index......start from 0
+
+4.Deselect the method
+
+FindElement return what
+Ans:WebElement
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+Today's Agenda
+-------------
+Xpath
+-------
+xml path based on xml
+one of the locator
+Most we are using xpath
+when you will use xpath
+No other locator we can go with xapth
+getting duplicate 
+<tag>
+<html>
+
+syntax
+-------
+//Tagname[]
+Tag-----pink
+Attribute----orange
+Attribute Value----blue
+text----black
+Selenium Always interact withvery first match
+tag
+Attribute
+value
+txt
+ types
+--------
+1.Absolute xpath
+
+/html/body/div[2]/div[2]/div/form/p[2]/label
+
+2.Relative xpath
+----------------
+Attribute based
+syntax
+--------
+//tagname[@Attribute='value']....>Exact match
+example:
+//input[@id='username']
+
+PartialMatch
+//tagname[contains(@Attribute,'value')]
+//label[contains(@for,'user')]
+
+TextBased
+---------
+black
+syntax
+-------
+//Tagname[text()='value']......>Exact match
+ example:
+//label[text()='Username']
+
+
+Partial Match
+//tagname[contains(text(),'value')]
+//a[contains(text(),'CRM/SFA')]
+
+
+Collection(Indexbased)
+syntax
+--------
+Getting multiple matches
+(suitable xpath)[1].....index start from 1 2 3
+(//tagname[@att='username'])[3]
+Max take 3 index
+example:
+(//a[@class='linktext'])[4]
+
+Advanced Xpath
+--------------------
+Axes-xpath
+-----------
+Relationship
+------------
+Immediate Relationship
+Parent-child Relation
+syntax
+-------
+
+<form>...parent
+  <p>
+  <p>  ......child
+  <p>
+//tagname[]/tagname
+parent xpath/child tagname
+//form[@id='login']/p[1]
+
+Child---parent
+
+child xpath/parent::parent tagname
+child xpath/..
+
+//p[@class='top']/parent::form
+
+GrandParent---GrandChild
+
+Grandparent xpath//grandchild Tagname
+//form[@id='login']//input[1]
+
+GrandChild----GrandParent
+
+GrandChild xpath/ancestor::Grandparent tagname
+
+//label[@for='username']/ancestor::form
+
+GrandChild xpath/../..
+//label[@for='username']/../..
+
+
+Distance relationship
+sibling
+Elder sibling---younger sibling
+
+Elder sibling xpath/following-sibling::younger tagname
+
+//label[@for='username']/following-sibling::input
+
+younger sibling----Elder sibling
+ 
+younger sibling/preceding-sibling::elder tagname
+
+//input[@id='username']/preceding-sibling::label
+
+Cousine
+
+Elder cousin to younger cousin
+
+Elder cousin xpath/following::cousin tagname
+//input[@id='username']/following::label
+
+younger cousin to Elder cousin
+
+younger cousin xpath/preceding::elder taganme
+
+
+Wait
+---------
+Implicit wait 
+wait the element have to interact
+30
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+applicable for all the webelement
+
+Thread.sleep
+java wait it will sleep completely 2 sec
+applicable only for particular element
+Browser verification method
+-----------------------------
+getText()....return the element value
+getTitle()...Print the particular page title ....tagname <title>
+getAttribute()....print the text inside the text box
+clear()....clear the text box already entered

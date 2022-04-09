@@ -1,0 +1,141 @@
+Today's Agenda
+--------------
+Collections---class
+
+Collection
+ List
+ Set
+ Map
+
+Selenium
+---------
+Action Class
+Webtable
+
+Collection
+----------
+Interface
+
+Store multiple data----Arrays
+Static
+int[] array=new int[10];
+a[0]=1;
+a[1]=2;
+a[2]=3;
+int[] employeesId={2003,2004,2005};
+Can I change the size later? Fixed you cannot resize also.
+I like to resize? Create a new array and store there.
+Dynamic -----Collections
+Interface
+Implementation class
+Collections is class
+Collection interface
+
+Grow/shrink----we can change the size
+
+1000----chair
+Manage the memory
+Types
+-------
+1.List    2. Set    3. Map(Two Dimension)[][]
+Single Dimension[]
+List
+--------
+-Interface
+-Implementation class 1.ArrayList 2.LinkedList
+-Single Dimensional Data Structure
+-Allows Duplicates data to store
+-Order is maintain by insertion(FIFO)
+Implementation class 1.ArrayList 2.LinkedList
+
+1.ArrayList
+a[0]=1;
+a[1]=3;
+a[2]=4;
+a[2]=3;
+a[3]=4;
+a[4]=5;
+based on index ,Start from 0...n
+insert some value a[1]=3;delete one index a[2]
+search one index a[4]=5
+
+2.LinkedList
+-------------
+Node based algorithm
+
+n1[1] n2[2] n3[3] n4[4] n5[6] n6[5]...end
+
+
+
+s1 s2 s3 s4 s5 yes/no
+
+insert/delete some node easy it won't affect any order
+Search is difficult
+
+[a][b][g][h][c]---Maintain the insertion order
+
+syntax
+------
+List<Wrapper Class> object=new ArrayList/LinkedList<Wrapper class>();
+<>--Generic
+Wrapper class
+
+
+Primitive data types
+int       Interger
+float     Float
+boolean   Boolean
+char      Character
+short     Short
+double    Double
+byte      Byte
+long      Long
+
+List<String>obj
+
+List method
+-----------
+add-to add the element in the list
+remove-delete the element from the list
+get--to retrieve the element from list specific index
+size--count of element in the list
+contains---returns boolean---To find whether given element exist in the list
+clear--to clear the list
+isEmpty---return boolean 
+Set
+-----
+-Interface
+-Dynamic Array
+-not allow the duplicates
+-Single Dimension
+
+Arrays---10 data static int[]num=new int[10];
+Dynamic ---grow and shrink
+Implementation class
+---------------
+1.HashSet---It will use hashing Algorithm---Hash value will be Random order---fast output
+
+2.TreeSet---Order based result---ASCII value(Ascending order)
+
+3.LinkedHashSet----Maintain the insertion order
+ Methods
+--------
+add-to add the element in the list
+remove-delete the element from the list by object/index
+get--Not applicable? becoz the implementation class
+size--count of element in the list
+contains---returns boolean---To find whether given element exist in the list
+clear--to clear the list
+isEmpty---return boolean
+syntax
+------
+Set<Wrapper Class> obj name=new ImplementationClass<Wrapper Class>(); 
+Webtable
+---------
+//table
+<table>
+ <tbody>
+
+<th>----Header 
+<tr>-----Row
+<td>-----Data

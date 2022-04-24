@@ -1,0 +1,131 @@
+TestNg Framework:
+===============
+---Execution framework/unit testing framework
+---To execute multiple testcases-sequential and parallel
+--Provide status in the console-Pass/Fail
+--Provide reports--Execution summary-html
+--supports with few annotations and attributes
+--supports crossbrowser testing
+--Supports Data driven concepts-reading dynamic (multiple) datas
+---Listeners to retry the failed testcases
+---Assertions-validate and verify the test steps
+=============================
+
+-Plugin and dependencies
+==========================
+<suite name="Suite">---->topmost layer==Holds everything in your project
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testcase.DeleteLead"/>
+      <class name="testcase.CreateLead"/>
+    </classes>
+  </test> <!-- Test -->
+<test thread-count="5" name="Test">
+    <classes>
+      <class name="testcase.DeleteLead"/>
+      <class name="testcase.CreateLead"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+ExecutionOrder-Annotations
+======================
+BeforeSuite
+BeforeTest
+BeforeClass
+BeforeMethod
+Learning Execution order
+AfterMethod
+AfterClass
+AfterTest
+
+
+BeforeSuite
+BeforeTest
+BeforeClass
+BeforeMethod
+ExecutionOrder
+AfterMethod
+AfterClass
+BeforeMethod
+Learning Execution order with Test2
+AfterMethod
+BeforeClass
+BeforeMethod
+Learning Execution order
+AfterMethod
+AfterClass
+AfterTest
+AfterSuite
+
+
+BeforeSuite--Reports can be configured
+	BeforeTest -Database connection --retreive data
+		BeforeClass--info for the test details
+			BeforeMethod--PreCondition
+				Learning Execution order--@Test--Actual test method
+			AfterMethod--Post conditions
+		AfterClass--End the test report
+	AfterTest-close db connection
+AfterSuite-close
+
+================
+Attributes:
+=======
+Priority-->prioritize the testcase for execution
+--the @Test method with lowest value assigned to priority will execute first
+
+invocationCount-->to execute a single testcase of multiple times
+default value=1-->int type
+
+threadPoolSize-Come along with invocation count and applicable only to @Test level
+default value =0
+
+enabled->to ignore the test case to be executed
+enabled=true
+
+dependsOnMethods-->to set the dependency to the methods
+
+groups-categorize the testcase..
+dependsOnGroups
+
+alwaysRun=true-->to forcefully run the testcase irrespective of the dependant method status(fail)
+
+==============================================================================
+Parameterization:
+============
+static data parametrization
+dynamic data parametrization
+
+static data parametrization
+=================
+url
+username
+pwd
+
+@Parameters
+
+
+dynamic data parametrization
+======================
+@DataProvider
+
+BeforeSuite--Reports can be configured
+	BeforeTest -Database connection --retreive data
+		BeforeClass--info for the test details
+				@DataProvider
+			BeforeMethod--PreCondition
+				Learning Execution order--@Test--Actual test method
+			AfterMethod--Post conditions
+		AfterClass--End the test report
+	AfterTest-close db connection
+AfterSuite-close
+
+
+
+
+
+
+
+
+

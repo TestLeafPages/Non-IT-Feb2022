@@ -1,0 +1,181 @@
+Cucumber
+=========
+Tool of BDD Approach
+
+BDD- Behaviour Driven Development Approach
+=====================================
+
+Old Traditional way of testing--After Development phase-->WaterFall Model
+
+Overcome all the drawbacks -->Agile Process-iterative and incremental 
+
+TDD--Test DrivenDevelopment
+===========================
+First Test script will be written-->based on the test script they moved develop
+
+ATDD--Acceptance Test Driven Developement 
+====================================
+With help of Product Owner-userstories-->test script-->developed
+
+BDD-framework
+============
+--show behaviour of the product
+--Written by BA/Product Owners -using simple Language-domain Specific language-Gherkin Language
+--Bridges the gap between the technical and Non-Technical Team
+--to bring consistency,accuracy and meaning to the project
+
+Gherkin Language
+==============
+--non coding Part--requirment as test case
+Keywords
+========
+
+Feature--->Functionality of the application
+Scenario: Positive /negative scenario 
+
+Given-PreCondition steps
+When-Test Condition
+Then--Expected Result(positive Scenario)
+But--Expected Result(negative Scenario)
+And-Conjuction 
+
+Login Page:
+
+Open the browser
+Load the url
+Enter the username
+Enter the Password
+Click the Login button
+Verification of landing page
+
+
+Background-to handle the common steps in the feature file
+To pass multiple data
+================
+Scenario Outline
+Examples
+
+============================
+
+
+BDD Tools
+========
+Cucumber
+Jbehave
+Fitnesse
+Concordion
+JDave
+
+specFlow --.net
+===========================
+Cucumber-Tool for BDD Approach
+
+3 Layers
+=======
+Feature File
+--Gherkin Language--Test stpes
+
+Step definition--Actual impletation of feature File
+---Test codes--Java Code
+
+Runner file
+--Execution file--Testng
+
+
+
+Attributes in @cucumberOptions
+
+features-->to get the path of the feature file
+glue-->to map  with java class file
+monocheome=true-->readable console
+dryRun=true-->snippet of missed feature step definition
+publish=true-->cucumber report
+
+========================================
+
+Today's Agenda
+============
+
+Hooks Concepts
+Tags
+
+TestNg --
+=========
+Retryfailed testcases
+Assertion
+
+
+Hooks Implementation:--implement PreCondition and postCondition
+=================
+Ruby-language
+
+@Before 
+@After
+
+Hooks implementation:
+==================
+Under Step definition package
+
+Create a base class-->declare the chrome driver as static
+
+Create Hooks class-->implement precondition and post condition steps with @Before and @After 
+
+Extend the base class to all the stepdef classess
+
+Remove the common steps in Feature file(Background)
+
+
+=============
+Tags-->to execute the feature files based on categories
+
+================
+Rerun Failed Testcases
+*************************
+Interface IRetryAnalyzer
+Interface IAnnotationTransformer
+<listeners>
+<listener class-name="testng.RetryListener"></listener>
+</listeners>
+============================================
+Assertion:
+=======
+  -verification
+
+hard assert-->terminates the execution once the assertion fails
+soft assert
+
+assertAll is mandatory to collect all the exceptions
+
+
+
+
+
+
+
+
+Pre-Requisite
+=================
+
+https://cucumber.github.com/cucumber-eclipse/update-site
+https://cucumber.github.io/cucumber-eclipse-update-site-snapshot/
+http://rlogiacco.github.io/Natural
+
+
+<dependency>
+     <groupId>io.cucumber</groupId>
+     <artifactId>cucumber-testng</artifactId>
+     <version>7.1.0</version>
+</dependency>
+<dependency>
+     <groupId>io.cucumber</groupId>
+     <artifactId>cucumber-java</artifactId>
+     <version>7.1.0</version>
+</dependency>
+==================================
+
+Classroom:
+● Steps to Create File :-
+After Creating features package, Mouseover on it & Right Click --> New --> Other... --> Select File under General Folder --> Click Next
+      ● Set File name as Login.feature & Click Finish
+      ● U can see a new file Created under features package like slice of Cucumber IMG 
+	Write the Login Test Steps

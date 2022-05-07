@@ -1,0 +1,114 @@
+PageObjectModel
+=================
+What is Page Object Model?
+Why We Use Page Object Model?
+
+Page Object Model 
+     --is a design pattern
+     --it separates the testcase and UI elements(WebElements)
+
+Why?
+
+1.Any changes made to the application, will be reflected across the application flow
+2.duplication of the code
+
+xml -->@Before annotation-->@Dataprovider  @Beforemethod @Test @AfterMethod
+
+So POM -creates a repository to hold the webElements
+
+--Easy maintainance of code
+--Overcomes the redundancy in the code
+--Readable code
+--Reusable code
+--Organize the code
+--Better report
+--Better Productivity
+--Property file-supports multi-lingual language
+--data driven concept
+=====================================================================
+To Create POM
+
+Step:1->Create  a package for projectspecific method
+  baseclass-->projectspecificmethod-->All preconditions steps and post condition steps
+
+Step:2 ->Create  a package pages to show navigation of the project
+create a separate java classes for each navigation
+
+
+Login page
+    -Enter the user name
+    -Enter Password
+    -click the login
+
+HomePage
+            -click CRMSFA
+            -Logout
+
+Leads page
+        -Click leads
+
+Login-->CRMSFA-->Leads
+Login-->crmsfa-->logout-->loginpage
+
+
+Step:3
+ Create methods for each actions in the respective pages/classes
+
+Step:4
+ Each javaclass should extends ProjectSpecficMethod
+
+Step:5
+Added the return statement to show the control of the navigation.
+
+Step:6
+Create testcase methods(@test) for each testcase(Scenario) and each testcase should extend the ProjectSpecific Method.
+
+Step:7 Change the chromeDriver to static-get driver instance to be passed from testcases to pages
+
+MyLeads page
+    -Createlead
+
+CreateLeadpage
+     -Enter Company name
+	-Enter first name
+	-Enter lastname
+	-Click Createlead button
+ViewLeadPage
+        Verify the leads created
+
+============================================
+
+Executing the testcases as sequentially and parallel
+****************************************************
+For sequential execution
+ **Add static to the driver 
+ **create testng.xml file to execute from suite level
+
+In parallel Execution
+
+
+ProjectSpecficMethod          pages
+	
+brforemethod-->creating the sessionid--->passed to pages (using constructor)
+
+			     testcases
+
+Steps for parallel Execution:
+============================
+
+**Remove Static Keyword in chromedriver declaration
+**Create a public constructor all pages
+**Pass the constructor , ChromeDriver driver as parameter 
+***use this keyword to initialize the local driver to instance variable
+***and pass the driver to the testcase.
+
+To add Dataprovider
+====================
+**Add the readExcel file to your project as a separate package
+**Add the common Dataprovider method to projectspecific maethod
+**Pass the parameter to the required pages and the testcase
+**Create a method in the testccase to attach your excel file and add the annotation dataProvider to your @Test
+			      
+
+
+

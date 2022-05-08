@@ -1,0 +1,76 @@
+Today's agenda
+==========
+How to handle multilanguage application
+Page Factory
+Explicit wait
+
+
+POM with Multilingual language
+========================
+
+Properties -property file to handle the multi languauge
+
+Key -Value
+
+Key --unquie -like locators
+Value -different based on the language of the app
+
+
+Create a folder prop ->create a file as language.properties
+language.properties file-->create a key url =http://leaftaps.com/opentaps/control/main
+add the 3 lines of code into your project specfic method
+
+Use Parameters concept to read the values from both properties files
+
+Parallel execution
+==============
+**Remove Static Keyword in property declaration
+**Pass the constructor , Properties prop as parameter 
+***use this keyword to initialize theprop to instance variable (prop)
+***and pass the prop to the testcase.
+
+
+
+PageFactory: -Other way locating WebElement
+
+==========
+Existing -FindElement and findElements
+
+
+@FindBy
+   -uses locators to locate the element
+
+to use multiple locators
+@FindBys-When both the condition is true, then it will execute properly(And Condition)
+@FindAll- (OR condition)
+@Cachelookup -to stores the information in the cachememory 
+->gets the information from the stored memory to your test case
+-->execution faster -performance is better
+
+Adv
+Code optimization
+Performance better
+
+disadv
+properties file
+will not allow dynamic
+=============================================
+
+Explicit Wait:
+-----------------
+-applicable to the respective webelement
+-WebDriverwait
+
+ WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));	
+		  wait.until(ExpectedConditions...);
+
+
+
+
+
+
+
+
+
+
+

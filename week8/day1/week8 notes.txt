@@ -1,0 +1,92 @@
+Today's Agenda
+=============
+Exception handling
+Extent Report integration POM
+ThreadLocal concept
+
+================================
+
+Exception handling:
+==============
+
+Error---can be due the memory issue /hardware settings..
+
+StackOverflow
+VirtualMachineError
+
+Exception-->terminates/ disturbs the execution flow
+
+Checked Exception--->
+   CompileTime
+IOException
+SQLException
+
+Unchecked Exception-->RuntimeException
+
+to handle the unchecked exception 
+
+try And catch block
+try with multiple catch blocks
+Nested try catch block
+try-finally
+
+throw and throws
+===========================================
+Extent Report
+==========
+-->Thrid Party API /framework from a avenstack(class)
+-->To get the report with summary, graphs ,scrennshots...
+
+ExtentHtmlreporter
+ExtentReports
+attachreporter
+mediaenititybuilder
+
+
+
+
+
+@Beforesuite-->report
+	@BeforeTest-->collected details of the testcase 
+		@BeforeClass-->add this details to the report
+			@Dataprovider
+			@BeforeMethod
+				@Test
+
+
+=============================
+ThreadLocal Concept:
+=========================
+As the constructor call is not allowed in cucumber 
+
+To acheive llel execution without constructor in cucumber
+
+Add ThreadLocalclass in Project specific method
+
+
+private static final ThreadLocal<RemoteWebDriver> tldriver=new ThreadLocal<RemoteWebDriver>();
+	
+	public void setDriver() {
+		tldriver.set(new ChromeDriver());
+	}
+	
+	public RemoteWebDriver getDriver() {
+		return tldriver.get();
+	}
+
+add setDriver() method to @BeforeMethod
+
+Remove the constructor from all the pages
+
+Change the driver to getDriver() in all the actions in the pages 
+
+
+
+
+
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.5</version>
+		</dependency>
